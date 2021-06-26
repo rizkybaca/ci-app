@@ -2,35 +2,38 @@
 	<div class="col-md-6">
 		<div class="card">
 		  <div class="card-header">
-		    Form Tambah Data
+		    Form Ubah Data
 		  </div>
 		  <div class="card-body">
 		    <form action="" method="POST">
+		    	<input type="hidden" name="id" value="<?= $mahasiswa['id']; ?>">
 		    	<div class="form-group">
 				    <label for="nama">Nama</label>
-				    <input type="text" class="form-control" id="nama" name="nama">
+				    <input type="text" class="form-control" id="nama" name="nama" value="<?= $mahasiswa['nama']; ?>">
 				    <small class="form-text text-danger"><?= form_error('nama'); ?></small>
 				  </div>
 				  <div class="form-group">
 				    <label for="nim">NIM</label>
-				    <input type="text" class="form-control" id="nim" name="nim">
+				    <input type="text" class="form-control" id="nim" name="nim" value="<?= $mahasiswa['nim']; ?>">
 				    <small class="form-text text-danger"><?= form_error('nim'); ?></small>
 				  </div>
 				  <div class="form-group">
 				    <label for="email">Email</label>
-				    <input type="text" class="form-control" id="email" name="email">
+				    <input type="text" class="form-control" id="email" name="email" value="<?= $mahasiswa['email']; ?>">
 				    <small class="form-text text-danger"><?= form_error('email'); ?></small>
 				  </div>
 				  <div class="form-group">
 				    <select class="form-control" name="jurusan">
-				    	<option value="">-pilih di bawah ini-</option>
-							<?php foreach ($jurusan as $j) : ?>
-						  	<option value="<?= $j; ?>"><?= $j; ?></option>
+				    	<?php foreach ($jurusan as $j) : ?>
+				    		<?php if ($j==$mahasiswa['jurusan']) : ?>
+						  		<option value="<?= $j; ?>" selected><?= $j; ?></option>
+						  	<?php else : ?>
+						  		<option value="<?= $j; ?>"><?= $j; ?></option>
+						  	<?php endif; ?>
 							<?php endforeach; ?>
 						</select>
-						<small class="form-text text-danger"><?= form_error('jurusan'); ?></small>
 				  </div>
-				  <button type="submit" class="btn btn-primary float-right">Tambah Data</button>
+				  <button type="submit" class="btn btn-primary float-right">Ubah Data</button>
 		    </form>
 		  </div>
 		</div>
