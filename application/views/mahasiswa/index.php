@@ -1,5 +1,7 @@
+<div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
 <?php if ($this->session->flashdata('flash')) : ?>
-	<div class="row">
+
+	<!-- <div class="row">
 		<div class="col-md-6">
 			<div class="alert alert-success alert-dismissible fade show" role="alert">
 			  Data mahasiswa <strong>berhasil!</strong> <?= $this->session->flashdata('flash'); ?>
@@ -8,7 +10,7 @@
 			  </button>
 			</div>
 		</div>
-	</div>
+	</div> -->
 <?php endif; ?>
 
 <div class="row">
@@ -42,7 +44,7 @@
 			<?php foreach ($mahasiswa as $mhs) : ?>
 		  <li class="list-group-item">
 		  	<?= $mhs['nama']; ?>
-		  	<a class="badge badge-danger float-right" href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['id']; ?>" onclick="return confirm('yakin?');">Hapus</a>
+		  	<a class="badge badge-danger float-right tombol-hapus" href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['id']; ?>">Hapus</a>
 		  	<a class="badge badge-success float-right" href="<?= base_url(); ?>mahasiswa/ubah/<?= $mhs['id']; ?>">Ubah</a>
 		  	<a class="badge badge-primary float-right" href="<?= base_url(); ?>mahasiswa/detail/<?= $mhs['id']; ?>">Detail</a>
 			</li>
