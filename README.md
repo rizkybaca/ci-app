@@ -1,2 +1,2 @@
 # ci-app
-Code Igniter 3 app | CRUD
+Code Igniter 3 app | CRUD Template
